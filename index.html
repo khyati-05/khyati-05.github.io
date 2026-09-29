@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Khyati Roj | Data Analyst Portfolio</title>
+
+  <meta name="description"
+        content="Khyati Roj - Aspiring Data Analyst portfolio featuring data analysis, visualization, Excel dashboards and AI-powered analytics.">
+
+  <style>
+    /* ---------- GLOBAL ---------- */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #fffafc;
+      color: #34313a;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* ---------- NAVBAR ---------- */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 250, 252, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #f0e5eb;
+    }
+
+    .nav-container {
+      height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #806080;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      color: #5f5863;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #9a6f91;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at top right, #f4e7f0 0, transparent 35%),
+        radial-gradient(circle at bottom left, #eee8f7 0, transparent 35%);
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #f2e7ef;
+      color: #805f79;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      color: #302c35;
+    }
+
+    .hero h1 span {
+      color: #9a6f91;
+    }
+
+    .hero h2 {
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: #6c6570;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #716b73;
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #9a6f91;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      border: 1px solid #d9c6d5;
+      color: #76586f;
+      background: white;
+    }
+
+    .btn-secondary:hover {
+      background: #f8f0f5;
+    }
+
+    /* ---------- SECTIONS ---------- */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: #37313a;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #79727b;
+    }
+
+    /* ---------- ABOUT ---------- */
+
+    .about-card {
+      background: white;
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid #f0e4eb;
+      box-shadow: 0 12px 35px rgba(70, 50, 70, 0.06);
+    }
+
+    .about-card p {
+      color: #69636b;
+      margin-bottom: 15px;
+    }
+
+    /* ---------- SKILLS ---------- */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      border: 1px solid #f0e4eb;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(70, 50, 70, 0.08);
+    }
+
+    .skill-card h3 {
+      margin-bottom: 12px;
+      color: #73566d;
+    }
+
+    .skill-card p {
+      color: #706a72;
+      font-size: 0.95rem;
+    }
+
+    /* ---------- PROJECT ---------- */
+
+    .project-card {
+      background: white;
+      border: 1px solid #eee2e9;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(70, 50, 70, 0.07);
+    }
+
+    .project-header {
+      padding: 35px;
+      background: linear-gradient(135deg, #f5eaf1, #eeeaf7);
+    }
+
+    .project-header h3 {
+      font-size: 1.7rem;
+      color: #403843;
+      margin-bottom: 8px;
+    }
+
+    .project-header p {
+      color: #716975;
+    }
+
+    .project-body {
+      padding: 35px;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 25px;
+    }
+
+    .tool {
+      background: #f4edf2;
+      color: #76586f;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .metric {
+      background: #fcf8fa;
+      border: 1px solid #f0e5eb;
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.35rem;
+      color: #805f79;
+    }
+
+    .metric span {
+      font-size: 0.8rem;
+      color: #777078;
+    }
+
+    .insights {
+      margin-top: 20px;
+    }
+
+    .insights li {
+      margin: 9px 0;
+      color: #69636b;
+    }
+
+    /* ---------- CONTACT ---------- */
+
+    .contact-card {
+      text-align: center;
+      background: linear-gradient(135deg, #f5eaf1, #eeeaf7);
+      padding: 55px 25px;
+      border-radius: 28px;
+    }
+
+    .contact-card h2 {
+      margin-bottom: 12px;
+      color: #403843;
+    }
+
+    .contact-card p {
+      color: #706a72;
+      margin-bottom: 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      border-top: 1px solid #f0e4eb;
+      color: #827b84;
+      font-size: 0.9rem;
+    }
+
+    /* ---------- MOBILE ---------- */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 75vh;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .about-card,
+      .project-body {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container nav-container">
+
+      <div class="logo">Khyati Roj</div>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="tag">Data Analytics • AI • Visualization</div>
+
+        <h1>
+          Hi, I'm <span>Khyati</span>.
+        </h1>
+
+        <h2>
+          Aspiring Data Analyst
+        </h2>
+
+        <p>
+          I enjoy turning raw data into meaningful insights through
+          data analysis, visualization, dashboards and AI-powered tools.
+        </p>
+
+        <div class="buttons">
+
+          <a href="#projects" class="btn btn-primary">
+            View My Projects
+          </a>
+
+          <a href="#contact" class="btn btn-secondary">
+            Let's Connect
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>About Me</h2>
+
+        <p>A little about my journey into data analytics.</p>
+
+      </div>
+
+      <div class="about-card">
+
+        <p>
+          I am a B.Tech Computer Science graduate with a growing focus
+          on Data Analytics. I enjoy working with data, identifying
+          patterns, creating meaningful visualizations and turning
+          information into actionable business insights.
+        </p>
+
+        <p>
+          I am currently developing my skills in Excel, SQL, Power BI,
+          Python and AI-powered analytics tools, while building
+          practical projects to strengthen my analytical and
+          problem-solving abilities.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Skills</h2>
+
+        <p>Tools and areas I'm developing.</p>
+
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Data Analysis</h3>
+          <p>
+            Excel • Data Cleaning • Pivot Tables • Business Analysis
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Visualization</h3>
+          <p>
+            Excel Dashboards • Charts • Data Storytelling
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>SQL</h3>
+          <p>
+            Currently learning SQL for querying and analyzing data.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Power BI</h3>
+          <p>
+            Developing skills in dashboards, reports and data visualization.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Python</h3>
+          <p>
+            Building foundational Python skills for data analysis.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>AI & Copilot</h3>
+          <p>
+            Exploring Generative AI, prompt engineering and
+            AI-assisted data analysis.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Featured Project</h2>
+
+        <p>Turning business data into actionable insights.</p>
+
+      </div>
+
+      <div class="project-card">
+
+        <div class="project-header">
+
+          <h3>Sales Performance Analysis Dashboard</h3>
+
+          <p>
+            An Excel-based analysis of sales performance across
+            months and regions.
+          </p>
+
+        </div>
+
+        <div class="project-body">
+
+          <div class="tools">
+
+            <span class="tool">Excel</span>
+            <span class="tool">Pivot Tables</span>
+            <span class="tool">Data Analysis</span>
+            <span class="tool">Dashboard</span>
+
+          </div>
+
+          <h3>Project Overview</h3>
+
+          <p>
+            Analyzed sales data to identify monthly trends,
+            regional performance and overall profitability.
+            The dashboard transforms raw sales data into
+            easy-to-understand business insights.
+          </p>
+
+          <div class="metrics">
+
+            <div class="metric">
+              <strong>₹1.02M+</strong>
+              <span>Total Sales</span>
+            </div>
+
+            <div class="metric">
+              <strong>18.45%</strong>
+              <span>Profit Margin</span>
+            </div>
+
+            <div class="metric">
+              <strong>1,500</strong>
+              <span>Total Orders</span>
+            </div>
+
+          </div>
+
+          <h3>Key Insights</h3>
+
+          <ul class="insights">
+
+            <li>
+              December recorded the highest monthly sales.
+            </li>
+
+            <li>
+              March recorded the lowest monthly sales.
+            </li>
+
+            <li>
+              The West region generated the highest sales.
+            </li>
+
+            <li>
+              The Central region recorded the lowest sales.
+            </li>
+
+            <li>
+              Overall profit margin was 18.45%.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- RESUME -->
+
+  <section id="resume">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Resume</h2>
+
+        <p>
+          My experience, education and skills in one place.
+        </p>
+
+      </div>
+
+      <div style="text-align:center;">
+
+        <p style="margin-bottom:20px; color:#706a72;">
+          My resume will be available here soon.
+        </p>
+
+        <a href="#" class="btn btn-primary">
+          Download Resume
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact-card">
+
+        <h2>Let's Connect</h2>
+
+        <p>
+          I'm always open to connecting with people interested
+          in data, analytics and technology.
+        </p>
+
+        <div class="contact-links">
+
+          <a
+            href="mailto:khyatiroj5401@gmail.com"
+            class="btn btn-primary">
+            Email Me
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/khyati-roj/"
+            target="_blank"
+            class="btn btn-secondary">
+            LinkedIn
+          </a>
+
+          <a
+            href="https://github.com/khyati-05"
+            target="_blank"
+            class="btn btn-secondary">
+            GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Khyati Roj • Data Analyst Portfolio
+
+  </footer>
+
+</body>
+</html>
