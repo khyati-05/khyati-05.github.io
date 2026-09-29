@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sales Performance Analysis | Khyati Roj</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff9fc;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header {
+            padding: 70px 0 50px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: #5f3f59;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #777;
+        }
+
+        section {
+            margin-bottom: 55px;
+        }
+
+        h2 {
+            color: #6f4b68;
+            margin-bottom: 18px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 18px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(80, 50, 70, 0.08);
+        }
+
+        .dashboard-image {
+            width: 100%;
+            border-radius: 18px;
+            margin-top: 20px;
+            border: 1px solid #eee2e9;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .metric {
+            background: #faf3f8;
+            padding: 22px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .metric strong {
+            display: block;
+            font-size: 25px;
+            color: #6f4b68;
+            margin-bottom: 5px;
+        }
+
+        .metric span {
+            color: #777;
+        }
+
+        .tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tool {
+            background: #f2e6f0;
+            padding: 9px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #8b5e83;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .back-button:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 700px) {
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Sales Performance Analysis</h1>
+        <p class="subtitle">
+            Data Analytics Portfolio Project
+        </p>
+    </header>
+
+
+    <!-- PROJECT OVERVIEW -->
+
+    <section>
+        <div class="card">
+
+            <h2>Project Overview</h2>
+
+            <p>
+                This project analyzes sales performance using a dataset of
+                1,500 sales orders. The analysis focuses on sales, profit,
+                product performance, regional performance, and monthly trends.
+            </p>
+
+            <p>
+                The goal was to transform raw sales data into meaningful
+                business insights using data cleaning, Excel analysis,
+                pivot tables, and dashboard visualization.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- BUSINESS PROBLEM -->
+
+    <section>
+        <div class="card">
+
+            <h2>Business Problem</h2>
+
+            <p>
+                The business needed a clear way to understand sales
+                performance across products, regions, and months.
+                The analysis was designed to answer questions such as:
+            </p>
+
+            <ul>
+                <li>Which products generate the most sales?</li>
+                <li>Which regions perform the strongest?</li>
+                <li>Which months have the highest and lowest sales?</li>
+                <li>What is the overall profit performance?</li>
+                <li>What is the average order value?</li>
+            </ul>
+
+        </div>
+    </section>
+
+
+    <!-- TOOLS -->
+
+    <section>
+        <div class="card">
+
+            <h2>Tools & Skills</h2>
+
+            <div class="tools">
+                <span class="tool">Microsoft Excel</span>
+                <span class="tool">Pivot Tables</span>
+                <span class="tool">Data Cleaning</span>
+                <span class="tool">Data Analysis</span>
+                <span class="tool">Dashboard Design</span>
+                <span class="tool">Business Insights</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- DATASET -->
+
+    <section>
+        <div class="card">
+
+            <h2>Dataset & Data Cleaning</h2>
+
+            <p>
+                The dataset contains 1,500 sales transactions with the
+                following fields:
+            </p>
+
+            <ul>
+                <li>Order ID</li>
+                <li>Order Date</li>
+                <li>Customer ID</li>
+                <li>Product</li>
+                <li>Category</li>
+                <li>Region</li>
+                <li>Quantity</li>
+                <li>Discount</li>
+                <li>Sales</li>
+                <li>Profit</li>
+            </ul>
+
+            <p>
+                Data preparation included checking for blank values,
+                duplicate Order IDs, formatting inconsistencies,
+                dates, and numerical values before performing the analysis.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- KEY METRICS -->
+
+    <section>
+        <div class="card">
+
+            <h2>Key Performance Indicators</h2>
+
+            <div class="metrics">
+
+                <div class="metric">
+                    <strong>₹1,023,055.49</strong>
+                    <span>Total Sales</span>
+                </div>
+
+                <div class="metric">
+                    <strong>₹188,804.55</strong>
+                    <span>Total Profit</span>
+                </div>
+
+                <div class="metric">
+                    <strong>3,602</strong>
+                    <span>Quantity Sold</span>
+                </div>
+
+                <div class="metric">
+                    <strong>1,500</strong>
+                    <span>Total Orders</span>
+                </div>
+
+                <div class="metric">
+                    <strong>₹682.04</strong>
+                    <span>Average Order Value</span>
+                </div>
+
+                <div class="metric">
+                    <strong>18.45%</strong>
+                    <span>Profit Margin</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- DASHBOARD -->
+
+    <section>
+        <div class="card">
+
+            <h2>Dashboard</h2>
+
+            <p>
+                The dashboard provides a visual overview of sales,
+                profit, orders, regional performance, monthly trends,
+                and product performance.
+            </p>
+
+            <img
+                src="Sales Dashboard.png"
+                alt="Sales Performance Analysis Dashboard"
+                class="dashboard-image"
+            >
+
+            <img
+                src="Sales Dashboard (2).png"
+                alt="Sales Performance Analysis Dashboard - Second View"
+                class="dashboard-image"
+            >
+
+        </div>
+    </section>
+
+
+    <!-- KEY INSIGHTS -->
+
+    <section>
+        <div class="card">
+
+            <h2>Key Insights</h2>
+
+            <ul>
+                <li>
+                    The business generated total sales of
+                    ₹1,023,055.49 with a profit of ₹188,804.55.
+                </li>
+
+                <li>
+                    West was the highest-performing region by sales,
+                    while Central recorded the lowest regional sales.
+                </li>
+
+                <li>
+                    December recorded the highest monthly sales,
+                    while March recorded the lowest.
+                </li>
+
+                <li>
+                    Laptop Pro 14 was the top-selling product,
+                    followed by Laptop Air 13 and Standing Desk.
+                </li>
+
+                <li>
+                    The overall profit margin was 18.45%.
+                </li>
+
+                <li>
+                    The average order value was ₹682.04.
+                </li>
+            </ul>
+
+        </div>
+    </section>
+
+
+    <!-- ANALYSIS PROCESS -->
+
+    <section>
+        <div class="card">
+
+            <h2>Analysis Process</h2>
+
+            <ol>
+                <li>Collected and reviewed the sales dataset.</li>
+                <li>Checked data quality and formatting.</li>
+                <li>Verified blanks and duplicate Order IDs.</li>
+                <li>Created pivot tables for analysis.</li>
+                <li>Calculated key sales and profit metrics.</li>
+                <li>Analyzed regional and monthly performance.</li>
+                <li>Identified top-performing products.</li>
+                <li>Created the final sales dashboard.</li>
+            </ol>
+
+        </div>
+    </section>
+
+
+    <!-- BACK TO PORTFOLIO -->
+
+    <div style="text-align:center; margin:50px 0 70px;">
+
+        <a href="index.html" class="back-button">
+            ← Back to Portfolio
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
